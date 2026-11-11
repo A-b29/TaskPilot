@@ -8,8 +8,8 @@ TaskPilot is a to-do app you run by chatting. You type things like *"Add a task 
 
 | | URL |
 |---|---|
-| Frontend | `https://<your-app>.vercel.app` |
-| Backend (FastAPI) | `https://<your-api>.onrender.com` (Swagger UI at [`/docs`](https://<your-api>.onrender.com/docs)) |
+| Frontend | `https://task-pilot-murex-pi.vercel.app` |
+| Backend (FastAPI) | `https://taskpilot-api-w8si.onrender.com` (Swagger UI at [`/docs`](https://<your-api>.onrender.com/docs)) |
 
 > The backend is on Render's free plan, which **sleeps after 15 minutes idle**. The first request after that can take about a minute while it wakes up. The login page shows a "waking up the server" message when this happens.
 
