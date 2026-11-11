@@ -1,0 +1,6 @@
+fastapi==0.162.4
+uvicorn[standard]==0.54.0
+SQLAlchemy==2.1.8
+psycopg[binary]==3.3.8
+PyJWT==2.15.1
+openai==3.49.0
