@@ -34,7 +34,10 @@ export async function api(path, { method = "GET", body } = {}) {
       body: body && JSON.stringify(body),
     });
   } catch {
-    throw new Error("Can't reach the server. If the app was idle, the free backend may be waking up, so try again in about a minute.");
+    // fetch only throws on network failure, a CORS rejection, or a blocked http:// call from an https:// page
+    if (BASE.includes("localhost") && !location.hostname.includes("localhost"))
+      throw new Error("This site isn't connected to the backend: VITE_API_URL was not set when it was built.");
+    throw new Error(`Can't reach the server (${BASE}). If the app was idle, the free backend may be waking up, so try again in about a minute.`);
   }
   const data = await res.json().catch(() => null);
   if (res.status === 401 && token) onUnauthorized();

@@ -50,7 +50,8 @@ async def lifespan(app):
 app = FastAPI(title="TaskPilot API", description="Manage to-do tasks by chatting with an AI agent.", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",") if o.strip()],
+    # Browsers send the Origin without a trailing slash, so "https://x.vercel.app/" must not break CORS.
+    allow_origins=[o.strip().rstrip("/") for o in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",") if o.strip()],
     allow_methods=["*"],
     allow_headers=["*"],
 )
