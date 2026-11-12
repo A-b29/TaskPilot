@@ -1,15 +1,13 @@
 # TaskPilot: an AI agent that manages your tasks
 
-**Project B (TaskPilot)**, QuantumApps AI take-home, Round 1.
-
 TaskPilot is a to-do app you run by chatting. You type things like *"Add a task to submit the monthly report by Friday"* or *"Mark the report done and add a task to start the next one"*. An LLM agent picks the right tools (add, list, update, delete) and changes the data in Postgres. The task list next to the chat updates as it goes. Admins can see every user and every task, and can assign tasks to other people.
 
 ## Live app
 
 | | URL |
 |---|---|
-| Frontend | `https://task-pilot-murex-pi.vercel.app` |
-| Backend (FastAPI) | `https://taskpilot-api-w8si.onrender.com` (Swagger UI at [`/docs`](https://<your-api>.onrender.com/docs)) |
+| Frontend | `https://task-pilot-xi.vercel.app` |
+| Backend (FastAPI) | `https://taskpilot-api-kyar.onrender.com` (Swagger UI at [`/docs`](https://<your-api>.onrender.com/docs)) |
 
 > The backend is on Render's free plan, which **sleeps after 15 minutes idle**. The first request after that can take about a minute while it wakes up. The login page shows a "waking up the server" message when this happens.
 
@@ -17,8 +15,8 @@ TaskPilot is a to-do app you run by chatting. You type things like *"Add a task 
 
 | Role | Email | Password |
 |---|---|---|
-| Admin | `admin@taskpilot.app` | `<set in Render>` |
-| User | `demo@taskpilot.app` | `<set in Render>` |
+| Admin | `admin@taskpilot.app` | `admin123` |
+| User | `demo@taskpilot.app` | `demo1234` |
 
 The demo user starts with three sample tasks. You can also sign up for a new account, which always gets the normal **user** role.
 
